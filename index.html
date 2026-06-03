@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leviathan-Nexusprime Solutions — Premium Web Design & Digital Systems</title>
-<meta name="description" content="Boutique web design agency building premium digital experiences and automated systems for ambitious businesses. London & Remote.">
+<title>Leviathan-Nexusprime Solutions — Agentic Websites & Business Automation</title>
+<meta name="description" content="Agentic websites, lead-generation landing pages, and automated business systems for ambitious local and online businesses. London & Remote.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -34,10 +34,14 @@
 html { scroll-behavior:smooth; }
 body {
   background:var(--bg); color:var(--text);
-  font-family:'Inter',-apple-system,sans-serif;
+  font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:4px;
 }
 body::before {
   content:''; position:fixed; inset:0;
@@ -88,11 +92,10 @@ nav.scrolled {
 }
 .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
 .nav-logo-img {
-  height:38px; width:auto;
-  filter:invert(1) hue-rotate(145deg) saturate(2);
-  mix-blend-mode:screen;
+  height:42px; width:42px; object-fit:cover; border-radius:10px;
+  border:1px solid rgba(0,229,160,0.22); box-shadow:0 0 24px rgba(0,229,160,0.12);
 }
-.nav-logo-text { font-size:13px; font-weight:700; letter-spacing:-0.03em; color:var(--text); line-height:1.2; }
+.nav-logo-text { font-size:13px; font-weight:800; letter-spacing:-0.03em; color:var(--text); line-height:1.2; }
 .nav-logo-text span { color:var(--accent); }
 .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
 .nav-links a { font-size:14px; font-weight:400; color:var(--muted); text-decoration:none; transition:color 0.2s; }
@@ -133,7 +136,20 @@ nav.scrolled {
 .hero-badge .pulse { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 2.5s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
 
+.hero-brand-card {
+  display:inline-flex; align-items:center; gap:13px;
+  padding:9px 16px 9px 10px; margin-bottom:22px;
+  border:1px solid rgba(0,229,160,0.18); border-radius:18px;
+  background:rgba(7,9,9,0.68); backdrop-filter:blur(10px);
+  box-shadow:0 18px 80px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+}
+.hero-brand-card img { width:56px; height:56px; object-fit:cover; border-radius:14px; }
+.hero-brand-name { text-align:left; }
+.hero-brand-name strong { display:block; font-size:15px; letter-spacing:-0.02em; }
+.hero-brand-name span { display:block; margin-top:2px; font-size:11px; color:var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:0.08em; text-transform:uppercase; }
+
 .hero h1 {
+  font-family:'Space Grotesk','Manrope',sans-serif;
   font-size:clamp(44px,7.5vw,96px); font-weight:800; line-height:1.04;
   letter-spacing:-0.05em; max-width:960px; margin-bottom:4px;
   text-shadow:0 4px 40px rgba(0,0,0,.9),0 2px 12px rgba(0,0,0,.7),0 0 80px rgba(0,0,0,.5);
@@ -194,7 +210,7 @@ nav.scrolled {
   margin-bottom:14px; display:flex; align-items:center; gap:10px;
 }
 .section-label::before { content:''; width:20px; height:1px; background:var(--accent); }
-.section-headline { font-size:clamp(32px,4.5vw,56px); font-weight:700; letter-spacing:-0.035em; line-height:1.1; max-width:560px; }
+.section-headline { font-family:'Space Grotesk','Manrope',sans-serif; font-size:clamp(32px,4.5vw,56px); font-weight:700; letter-spacing:-0.035em; line-height:1.1; max-width:560px; }
 .section-sub { font-size:17px; color:var(--muted); max-width:52ch; line-height:1.65; margin-top:14px; margin-bottom:64px; }
 .fade-up { opacity:0; transform:translateY(32px); }
 @media(max-width:768px){ .section { padding:80px 24px; } }
@@ -263,7 +279,7 @@ nav.scrolled {
 #contact { border-top:1px solid var(--border); }
 #contact .inner { max-width:1200px; margin:0 auto; padding:120px 56px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
 @media(max-width:900px){ #contact .inner { grid-template-columns:1fr; gap:48px; padding:80px 24px; } }
-.contact-left h2 { font-size:clamp(36px,4.5vw,60px); font-weight:700; letter-spacing:-0.04em; line-height:1.08; margin-bottom:18px; }
+.contact-left h2 { font-family:'Space Grotesk','Manrope',sans-serif; font-size:clamp(36px,4.5vw,60px); font-weight:700; letter-spacing:-0.04em; line-height:1.08; margin-bottom:18px; }
 .contact-left h2 em { font-style:normal; color:var(--accent); }
 .contact-left p { font-size:17px; color:var(--muted); line-height:1.65; margin-bottom:40px; }
 .contact-detail { display:flex; align-items:center; gap:12px; margin-bottom:14px; font-size:14px; color:var(--muted); }
@@ -290,12 +306,21 @@ nav.scrolled {
 footer { border-top:1px solid var(--border); background:var(--card); padding:36px 56px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
 @media(max-width:768px){ footer { padding:28px 24px; flex-direction:column; align-items:flex-start; gap:20px; } }
 .footer-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.footer-logo-img { width:30px; height:30px; object-fit:cover; border-radius:8px; border:1px solid rgba(0,229,160,0.18); }
 .footer-logo-text { font-size:13px; font-weight:700; letter-spacing:-0.03em; color:var(--text); }
 .footer-logo-text span { color:var(--accent); }
 .footer-links { display:flex; gap:24px; list-style:none; }
 .footer-links a { font-size:13px; color:var(--muted); text-decoration:none; transition:color 0.2s; }
 .footer-links a:hover { color:var(--text); }
 .footer-copy { font-size:12px; color:var(--muted2); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+    transition-duration:0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -319,6 +344,7 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
 <nav id="navbar">
   <a href="#" class="nav-logo">
     <img src="assets/logo.jpg" alt="Leviathan-Nexusprime Solutions" class="nav-logo-img">
+    <div class="nav-logo-text">leviathan-nexusprime<span>.</span><br>solutions</div>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -338,8 +364,12 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
         <span class="pulse"></span>
         Available for new projects — 2026
       </div>
-      <h1>Digital experiences<br>that <em>convert.</em></h1>
-      <p class="hero-sub">Premium web design &amp; automated systems for businesses<br>that demand excellence and real results.</p>
+      <div class="hero-brand-card" aria-label="Leviathan-Nexusprime Solutions brand mark">
+        <img src="assets/logo.jpg" alt="Leviathan-Nexusprime Solutions logo" width="56" height="56">
+        <div class="hero-brand-name"><strong>leviathan-nexusprime.solutions</strong><span>Websites • Agents • Automation</span></div>
+      </div>
+      <h1>Agentic websites<br>that <em>convert.</em></h1>
+      <p class="hero-sub">Premium websites and automated task systems for businesses<br>that need leads, speed, and real execution.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary magnetic" id="heroCta">
           <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -349,10 +379,10 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
       </div>
       <div class="hero-scroll">Scroll to explore</div>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num" data-count="42">0</div><div class="lbl">Sites delivered</div></div>
-        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Client retention</div></div>
-        <div class="hero-stat"><div class="num" data-count="14">14</div><div class="lbl">Day avg. delivery</div></div>
-        <div class="hero-stat"><div class="num">5x</div><div class="lbl">Avg. conversion lift</div></div>
+        <div class="hero-stat"><div class="num">AI</div><div class="lbl">Automation ready</div></div>
+        <div class="hero-stat"><div class="num">24h</div><div class="lbl">Response target</div></div>
+        <div class="hero-stat"><div class="num" data-count="14">14</div><div class="lbl">Day build sprint</div></div>
+        <div class="hero-stat"><div class="num">Audit</div><div class="lbl">Before build</div></div>
       </div>
     </div>
   </div>
@@ -362,7 +392,7 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
   <div class="marquee-track" id="marqueeTrack">
     <div class="marquee-inner" id="marqueeContent">
       <span class="marquee-item">Custom Web Design</span>
-      <span class="marquee-item">Enterprise Solutions</span>
+      <span class="marquee-item">Business Automation</span>
       <span class="marquee-item">Brand Identity</span>
       <span class="marquee-item">AI-Powered Systems</span>
       <span class="marquee-item">Landing Pages</span>
@@ -379,9 +409,9 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
     <div class="services-header">
       <div>
         <div class="section-label">What we build</div>
-        <h2 class="section-headline fade-up">Digital systems that move the needle</h2>
+        <h2 class="section-headline fade-up">Websites plus automations that move the needle</h2>
       </div>
-      <p class="services-header-right fade-up">Three core offerings. Each engineered for maximum business impact and delivered in weeks, not months.</p>
+      <p class="services-header-right fade-up">Three core offers: premium client-facing websites, backend automations, and brand systems that make the business feel trusted.</p>
     </div>
     <div class="spot-grid" id="spotGrid">
       <div class="spot-card fade-up">
@@ -392,11 +422,11 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
         <div class="svc-tags"><span class="svc-tag">UI/UX</span><span class="svc-tag">Responsive</span><span class="svc-tag">Animations</span><span class="svc-tag">CRO</span></div>
       </div>
       <div class="spot-card fade-up">
-        <span class="svc-num">02 / ENTERPRISE</span>
+        <span class="svc-num">02 / AUTOMATION</span>
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3>Enterprise Solutions</h3>
-        <p>Scalable digital infrastructure for growing businesses. Complex requirements, clean execution, zero compromise on performance or scale.</p>
-        <div class="svc-tags"><span class="svc-tag">Web Apps</span><span class="svc-tag">Integrations</span><span class="svc-tag">APIs</span><span class="svc-tag">Scale</span></div>
+        <h3>Task Automation</h3>
+        <p>Agentic workflows for enquiries, follow-ups, booking, reporting, content, and admin. Less manual work, faster client response.</p>
+        <div class="svc-tags"><span class="svc-tag">Agents</span><span class="svc-tag">Integrations</span><span class="svc-tag">APIs</span><span class="svc-tag">Workflows</span></div>
       </div>
       <div class="spot-card fade-up">
         <span class="svc-num">03 / IDENTITY</span>
@@ -413,7 +443,7 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
   <div class="section">
     <div class="section-label">Selected work</div>
     <h2 class="section-headline fade-up">Results that speak louder</h2>
-    <p class="section-sub fade-up">Recent projects built to perform, not just impress. Every one measured by real business outcomes.</p>
+    <p class="section-sub fade-up">Example outcomes and build categories. Replace these with real client case studies as soon as they are available.</p>
     <div class="portfolio-grid">
       <div class="portfolio-card fade-up">
         <div class="pspot"></div>
@@ -438,7 +468,7 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
   <div class="inner">
     <div class="section-label">How we work</div>
     <h2 class="section-headline fade-up">Brief to live in 14 days</h2>
-    <p class="fade-up" style="font-size:17px;color:var(--muted);max-width:48ch;line-height:1.65;margin-top:14px">A proven 4-step process that eliminates ambiguity and delivers with precision.</p>
+    <p class="fade-up" style="font-size:17px;color:var(--muted);max-width:48ch;line-height:1.65;margin-top:14px">A clear 4-step process: audit the business, design the conversion path, build the site, then connect useful automations.</p>
     <div class="process-grid fade-up">
       <div class="process-step">
         <span class="step-num">01 — DISCOVERY</span>
@@ -488,15 +518,15 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
       <input type="hidden" name="subject" value="New project enquiry — leviathan-nexusprime.solutions">
       <input type="hidden" name="from_name" value="Website Contact Form">
       <div class="form-row">
-        <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Your name" required></div>
-        <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@company.com" required></div>
+        <div class="form-group"><label for="name">Name</label><input id="name" type="text" name="name" placeholder="Your name" required></div>
+        <div class="form-group"><label for="email">Email</label><input id="email" type="email" name="email" placeholder="you@company.com" required></div>
       </div>
-      <div class="form-group"><label>Website (if existing)</label><input type="url" name="website" placeholder="https://yoursite.com"></div>
+      <div class="form-group"><label for="website">Website (if existing)</label><input id="website" type="url" name="website" placeholder="https://yoursite.com"></div>
       <div class="form-group">
-        <label>Service</label>
-        <select name="service" required><option value="" disabled selected>Select a service</option><option>Custom Web Design</option><option>Enterprise Solution</option><option>Brand Identity</option><option>Full Package</option></select>
+        <label for="service">Service</label>
+        <select id="service" name="service" required><option value="" disabled selected>Select a service</option><option>Custom Web Design</option><option>Task Automation</option><option>Brand Identity</option><option>Website + Automation Package</option></select>
       </div>
-      <div class="form-group"><label>About your project</label><textarea name="message" placeholder="What are you building? What's your goal? Any timeline?" required></textarea></div>
+      <div class="form-group"><label for="message">About your project</label><textarea id="message" name="message" placeholder="What are you building? What task should be automated? Any timeline?" required></textarea></div>
       <button type="submit" class="form-submit magnetic" id="formSubmit">
         <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
         Send message
@@ -507,11 +537,7 @@ footer { border-top:1px solid var(--border); background:var(--card); padding:36p
 
 <footer>
   <a href="#" class="footer-logo">
-    <svg width="24" height="24" viewBox="0 0 34 34" fill="none">
-      <path d="M7 27V7L17 27V7" stroke="#eef4f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M17 7L27 27V7" stroke="#eef4f4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="17" cy="17" r="2.5" fill="#00e5a0"/>
-    </svg>
+    <img src="assets/logo.jpg" alt="Leviathan-Nexusprime Solutions" class="footer-logo-img" width="30" height="30">
     <div class="footer-logo-text">leviathan-nexusprime<span>.</span>solutions</div>
   </a>
   <ul class="footer-links">
